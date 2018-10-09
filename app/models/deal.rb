@@ -4,7 +4,7 @@ class Deal < ActiveRecord::Base
   validates :title,{presence:true,length:{maximum:30}}
   validates :deal_detail,{presence:true,length:{maximum:500}}
   validates :user_id,{presence:true}
-  validates :genre,{presence:true}
+#  validates :genre,{presence:true}
 
 
   def user
