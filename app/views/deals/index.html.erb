@@ -1,0 +1,26 @@
+<h2 class="form-heading">取引一覧</h2>
+    <% @deals.each do|deal|%>
+      <div class="deals-index-item">
+        <%=link_to("/deals/#{deal.id}")do%>
+        <div class="deals-left">
+          <div class="deals-header">
+            <div class="deals-info">
+              <div class="category">
+                <%= deal.category %>
+              </div>
+              <div class="deals-genre-index">
+                <%= deal.genre%>
+              </div>
+            </div>
+            <div class="deals-title">
+              <%= deal.title %>
+            </div>
+          </div>
+          <div class="deals-detail">
+            <p><%= deal.deal_detail %></p>
+          </div>
+        </div>
+          <img src="<%="/deal_photoes/#{deal.photo1}"%>" class="index-photo1" onerror="this.style.display='none'"/>
+        <% end%>
+      </div>
+    <% end%>

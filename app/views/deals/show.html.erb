@@ -1,0 +1,29 @@
+<h2 class="form-heading">取引詳細</h2>
+<div class="deals-show-item">
+  <div class="deals-header-show">
+    <div class="deals-info-show">
+      <div class="category">
+        <%= @deal.category %>
+      </div>
+      <div class="user-name">
+        <%= @user.name %>
+      </div>
+    </div>
+    <div class="deals-title-show">
+      <%= @deal.title %><span class="deals-genre"><%= @deal.genre%></span>
+    </div>
+  </div>
+  <div class="deals-photoes-show">
+    <img src="<%="/deal_photoes/#{@deal.photo1}"%>" class="show-photo1" onerror="this.style.display='none'"/>
+    <img src="<%="/deal_photoes/#{@deal.photo2}"%>" class="show-photo2" onerror="this.style.display='none'"/>
+    <img src="<%="/deal_photoes/#{@deal.photo3}"%>" class="show-photo3" onerror="this.style.display='none'"/>
+    <img src="<%="/deal_photoes/#{@deal.photo4}"%>" class="show-photo4" onerror="this.style.display='none'"/>
+  </div>
+  <div class="deals-detail-show">
+    <%= @deal.deal_detail %>
+  </div>
+  <div class="deals-menus">
+    <%= link_to("編集","/deals/#{@deal.id}/edit") %>
+    <%= link_to("削除 ", "/deals/#{@deal.id}/destroy",{method:"post"}) %>
+  </div>
+</div>

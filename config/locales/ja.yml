@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      deal: 取引
+    attributes:
+        deal:
+          user_name: 名前
+          category : 欲しい・あげる
+          title: タイトル
+          deal_detail: 詳細

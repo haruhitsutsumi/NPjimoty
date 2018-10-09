@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deal_id: 1
+  user_name: MyString
+  category: 1
+  photo1: 
+  photo2: 
+  photo3: 
+  photo4: 
+  title: MyString
+  explanation: MyText
+
+two:
+  deal_id: 1
+  user_name: MyString
+  category: 1
+  photo1: 
+  photo2: 
+  photo3: 
+  photo4: 
+  title: MyString
+  explanation: MyText

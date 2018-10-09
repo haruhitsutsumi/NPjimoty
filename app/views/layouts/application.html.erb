@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NPjimoty</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <div class="header-logo">NPjimoty</div>
+  <ul class="header-menus">
+    <% current_user=User.find_by(id:session[:user_id])%>
+    <% if  current_user%>
+      <li>
+        <%= current_user.name%>
+      </li>
+      <li>
+        <a href="/deals/new">取引登録</a>
+      </li>
+      <li>
+        <a href="/deals/index">取引一覧</a>
+      </li>
+      <li>
+        <%= link_to("ログアウト", "/logout",{method:"post"}) %>
+      </li>
+      <li>
+        <%= link_to("ユーザー編集", "/user/#{@current_user.id}/edit") %>
+      </li>
+    <% else %>
+      <li>
+        <a href="/deals/index">取引一覧</a>
+      </li>
+      <li>
+        <a href="/user/new">ユーザー登録</a>
+      </li>
+      <li>
+        <a href="/login">ログイン</a>
+      </li>
+    <% end %>
+  </ul>
+</header>
+
+<main>
+  <% if flash[:notice]%>
+       <div class="flash">
+         <%= flash[:notice]%>
+       </div>
+  <% end %>
+  <%= yield %>
+</main>
+<footer>
+  <p>お問い合わせはこちらまで→htsutsumi@netprotections.co.jp</p>
+</footer>
+</body>
+</html>

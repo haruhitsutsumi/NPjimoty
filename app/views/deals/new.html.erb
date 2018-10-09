@@ -1,0 +1,53 @@
+<h2 class="form-heading">取引登録</h2>
+<div class="deals-form">
+  <%=form_tag("/deals/create",{multipart:true})do %>
+  <% @deal.errors.full_messages.each do |message| %>
+  <div class="form-error">
+    <%= message %>
+  </div>
+  <% end %>
+  <div class="input-form">
+    <table>
+      <tr>
+        <th  class="want-or-give">ほしい・あげる<span class="you-must">必須</span></th>
+        <td><select name="category">
+          <option>選択してください</option>
+          <option value="欲しい">ほしい</option>
+          <option value="あげる">あげる</option></td>
+      </tr>
+      <tr>
+        <th  class="deals-genre">ジャンル<span class="you-must">必須</span></th>
+        <td><select name="deals-genre">
+          <option>選択してください</option>
+          <option value="家電">家電</option>
+          <option value="家具">家具</option>
+          <option value="書籍">書籍</option>
+          <option value="生活雑貨">生活雑貨</option>
+          <option value="電子機器">電子機器</option>
+          <option value="その他">その他</option>
+        </td>
+      </tr>
+      <tr>
+        <th>タイトル<span class="you-must">必須</span></th>
+        <td><input name="title" value="<%=@deal.title%>"></td>
+      </tr>
+      <tr>
+        <th>詳細<span class="you-must">必須</span></th>
+        <td><textarea name="deal_detail" rows="8" cols="80"><%=@deal.deal_detail%></textarea></td>
+      </tr>
+      <tr>
+        <th>画像</th>
+        <td>
+          <input type="file" name="photo1">
+          <input type="file" name="photo2">
+          <input type="file" name="photo3">
+          <input type="file" name="photo4">
+        </td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  <div class="button">
+    <input type="submit" value="投稿">
+  </div>
+<%end%>
